@@ -1,6 +1,7 @@
 package com.example.threadscontrolador;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
@@ -66,5 +67,20 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }).start();
+    }
+
+    public void Iniciar(View view){
+        if(iniciar){
+            iniciar=false;
+            counter=0;
+            start.setText("Iniciar");
+            b1.setBackgroundColor(getResources().getColor(R.color.gris));
+            b2.setBackgroundColor(getResources().getColor(R.color.gris));
+            b3.setBackgroundColor(getResources().getColor(R.color.gris));
+        } else{
+            iniciar = true;
+            start.setText("Stop");
+        }
+        setColorCounter();
     }
 }
